@@ -8,6 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 .env
+.tool-versions
+
+CLAUDE.md
 
 node_modules
 dist

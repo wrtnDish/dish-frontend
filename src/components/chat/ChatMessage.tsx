@@ -17,6 +17,23 @@ interface ChatMessageProps {
 export function ChatMessage({ message }: ChatMessageProps) {
   const isUser = message.role === "user";
 
+  // 사용자 메시지에서 JSON 형태인지 확인하고 message 필드만 추출
+  const getDisplayContent = (content: string): string => {
+    if (isUser) {
+      try {
+        const parsed = JSON.parse(content);
+        if (parsed.message && typeof parsed.message === 'string') {
+          return parsed.message;
+        }
+      } catch (e) {
+        // JSON이 아니면 원본 내용 그대로 사용
+      }
+    }
+    return content;
+  };
+
+  const displayContent = getDisplayContent(message.content);
+
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
       <div
@@ -26,7 +43,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
       >
         {isUser ? (
           <p className="text-sm whitespace-pre-wrap break-all">
-            {message.content}
+            {displayContent}
           </p>
         ) : (
           <div className="prose prose-sm prose-invert max-w-none [&_pre]:!p-0 [&_pre]:!m-0 [&_pre]:!bg-transparent">
@@ -35,7 +52,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
               rehypePlugins={[rehypeHighlight]}
               components={markdownComponents}
             >
-              {message.content}
+              {displayContent}
             </ReactMarkdown>
           </div>
         )}
