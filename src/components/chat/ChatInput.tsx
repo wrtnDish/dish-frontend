@@ -52,15 +52,15 @@ export function ChatInput({ onSendMessage, disabled }: ChatInputProps) {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Type a message..."
-          className="flex-1 min-h-[44px] max-h-[160px] p-3 bg-zinc-700/50 text-gray-100 placeholder:text-gray-400 rounded-xl resize-none focus:outline-none focus:ring-1 focus:ring-white/20"
+          placeholder="어떤 음식이 먹고 싶으신가요? 예: 서울 강남 맛집 알려줘"
+          className="flex-1 min-h-[44px] max-h-[160px] p-3 bg-white/70 text-gray-800 placeholder:text-gray-500 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-orange-300/50 border border-orange-300/60"
         />
         <button
           type="submit"
           disabled={!message.trim() || disabled}
-          className="px-4 py-2 bg-white/10 text-white rounded-xl hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-zinc-800 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-4 py-2 bg-orange-500 text-white rounded-xl hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-md"
         >
-          Send
+          보내기
         </button>
       </form>
     </div>

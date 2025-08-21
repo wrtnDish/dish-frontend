@@ -35,9 +35,20 @@ export function Chat() {
   return (
     <div className="flex-1 flex flex-col items-center justify-center p-4 md:p-8 min-w-0">
       <div className="relative w-full h-[calc(100vh-2rem)] md:h-[calc(100vh-4rem)]">
-        <div className="h-full flex flex-col bg-zinc-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-zinc-700/30">
-          <div className="p-4 border-b border-zinc-700/30">
-            <LocationInfo />
+        <div className="h-full flex flex-col bg-white/80 backdrop-blur-md rounded-2xl overflow-hidden border border-orange-200/30 shadow-xl">
+          <div className="p-4 border-b border-orange-200/30">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="text-2xl">🍴</div>
+                <div>
+                  <h2 className="text-lg font-semibold text-gray-800">Wrtn Dish</h2>
+                  <p className="text-sm text-gray-600">맛집 추천 AI</p>
+                </div>
+              </div>
+              <div className="text-right">
+                <LocationInfo />
+              </div>
+            </div>
           </div>
           
           <div
@@ -51,6 +62,7 @@ export function Chat() {
               hasMessages={hasMessage}
               onRetryConnect={tryConnect}
               isWsUrlConfigured={import.meta.env.VITE_AGENTICA_WS_URL !== ""}
+              onSendMessage={handleSendMessage}
             />
           </div>
 
