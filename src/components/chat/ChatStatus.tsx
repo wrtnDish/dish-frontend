@@ -1,10 +1,15 @@
+import { useAgenticaRpc } from "../../provider/AgenticaRpcProvider";
+
 interface ChatStatusProps {
   isError: boolean;
   isConnected: boolean;
   hasMessages: boolean;
   onRetryConnect: () => void;
   isWsUrlConfigured: boolean;
-  onSendMessage?: (message: string) => void;
+  onSendMessage?: (
+    content: string,
+    location: { latitude: number | null; longitude: number | null; accuracy: number | null; timestamp: number | null; },
+  ) => void;
 }
 
 export function ChatStatus({
@@ -13,8 +18,10 @@ export function ChatStatus({
   hasMessages,
   onRetryConnect,
   isWsUrlConfigured,
-  onSendMessage
+  onSendMessage,
 }: ChatStatusProps) {
+  const { location } = useAgenticaRpc();
+
   if (!isWsUrlConfigured) {
     return (
       <div className="h-full flex flex-col items-center justify-center gap-4">
@@ -67,15 +74,18 @@ export function ChatStatus({
           <p className="text-lg mb-2 text-gray-800">안녕하세요! Wrtn Dish 입니다!</p>
           <p className="text-gray-600">위치, 날씨, 취향을 고려한 맞춤 음식을 추천해드려요</p>
         </div>
-        
+
         {onSendMessage && (
           <div className="w-full max-w-md">
             <p className="text-center text-gray-500 mb-3 text-xs">빠른 질문하기</p>
             <div className="grid grid-cols-2 gap-2">
-              {suggestedQuestions.map((question, index) => (
+              {suggestedQuestions.map((
+                question,
+                index,
+              ) => (
                 <button
                   key={index}
-                  onClick={() => onSendMessage(question)}
+                  onClick={() => onSendMessage && onSendMessage(question, location)}
                   className="p-2 text-xs bg-orange-100/80 hover:bg-orange-200/80 text-gray-700 hover:text-gray-800 rounded-lg transition-all duration-200 text-center border border-orange-200/50"
                 >
                   💭 {question}
@@ -84,9 +94,9 @@ export function ChatStatus({
             </div>
           </div>
         )}
-        
+
         <p className="text-xs text-gray-500 text-center max-w-md">
-          또는 직접 메시지를 입력해 보세요!<br />
+          또는 직접 메시지를 입력해 보세요!<br/>
           예: "음식 추천해줘. 현재 배고픔은 3이고, 지역은 대전이야."
         </p>
       </div>

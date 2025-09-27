@@ -10,8 +10,6 @@ export function Chat() {
     useAgenticaRpc();
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const hasMessage = messages.length > 0;
-  const lastMessage = messages[messages.length - 1];
-  const isLastMessageFromUser = lastMessage?.type === "userMessage";
 
   const scrollToBottom = () => {
     if (messagesContainerRef.current) {
@@ -24,9 +22,9 @@ export function Chat() {
     scrollToBottom();
   }, [messages]);
 
-  const handleSendMessage = async (content: string) => {
+  const handleSendMessage = async (content: string, location: { latitude: number | null; longitude: number | null; accuracy: number | null; timestamp: number | null; }) => {
     try {
-      await conversate(content);
+      await conversate({ content, location });
     } catch (error) {
       console.error("Failed to send message:", error);
     }
@@ -69,7 +67,7 @@ export function Chat() {
           <div className="p-4">
             <ChatInput
               onSendMessage={handleSendMessage}
-              disabled={!isConnected || isError || isLastMessageFromUser}
+              disabled={!isConnected}
             />
           </div>
         </div>
