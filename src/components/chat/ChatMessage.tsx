@@ -17,13 +17,13 @@ interface ChatMessageProps {
 export function ChatMessage({ message }: ChatMessageProps) {
   const isUser = message.role === "user";
 
-  // 사용자 메시지에서 JSON 형태인지 확인하고 message 필드만 추출
+  // 사용자 메시지에서 JSON 형태인지 확인하고 content 필드만 추출
   const getDisplayContent = (content: string): string => {
     if (isUser) {
       try {
         const parsed = JSON.parse(content);
-        if (parsed.message && typeof parsed.message === 'string') {
-          return parsed.message;
+        if (parsed.content && typeof parsed.content === 'string') {
+          return parsed.content;
         }
       } catch (e) {
         // JSON이 아니면 원본 내용 그대로 사용

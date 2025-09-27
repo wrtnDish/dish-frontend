@@ -1,9 +1,9 @@
-import { useState, KeyboardEvent, useRef } from "react";
+import { KeyboardEvent, useRef, useState } from "react";
 import { useAgenticaRpc } from "../../provider/AgenticaRpcProvider";
 import { DEFAULT_LOCATION } from "../../constants/location";
 
 interface ChatInputProps {
-  onSendMessage: (content: string) => void;
+  onSendMessage: (content: string, location: { latitude: number | null; longitude: number | null; accuracy: number | null; timestamp: number | null; }) => void;
   disabled?: boolean;
 }
 
@@ -15,7 +15,7 @@ export function ChatInput({ onSendMessage, disabled }: ChatInputProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!message.trim() || disabled) return;
-    onSendMessage(message);
+    onSendMessage(message, location);
     setMessage("");
     textareaRef.current?.focus();
   };

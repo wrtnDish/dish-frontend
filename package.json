@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@agentica/core": "^0.31.0",
-    "@agentica/rpc": "^0.31.0",
-    "@tailwindcss/vite": "^4.1.11",
+    "@agentica/core": "^0.31.3",
+    "@agentica/rpc": "^0.31.3",
+    "@tailwindcss/vite": "^4.1.13",
     "@types/prismjs": "^1.26.5",
     "highlight.js": "^11.11.1",
     "prismjs": "^1.30.0",
@@ -24,12 +24,12 @@
     "tgrid": "^1.2.0"
   },
   "devDependencies": {
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^5.0.0",
+    "@types/react": "^19.1.14",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.3",
     "globals": "^15.15.0",
-    "tailwindcss": "^4.1.11",
+    "tailwindcss": "^4.1.13",
     "typescript": "~5.9.2",
-    "vite": "^7.1.0"
+    "vite": "^7.1.7"
   }
 }
