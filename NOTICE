@@ -1,0 +1,119 @@
+THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
+
+This project incorporates material from the projects listed below (Third Party Code).
+The original copyright notice and the license under which we received such Third Party Code
+are set forth below. This Third Party Code is licensed to you under their original license terms.
+
+================================================================================
+
+TEMPLATE ATTRIBUTION
+
+This project is based on:
+- Agentica Framework: Copyright (c) 2025 Wrtn Technologies (MIT License)
+  Homepage: https://wrtnlabs.io/agentica
+
+Significant modifications and additions have been made by Team WiSoft for the
+WRTN Dish - AI Food Recommendation System project.
+
+================================================================================
+
+1. Agentica (@agentica/core, @agentica/rpc)
+   Version: ^0.31.3
+   License: MIT
+   Copyright: Agentica Contributors
+   Repository: https://github.com/agentica-project/agentica
+
+2. React (react, react-dom)
+   Version: ^19.1.1
+   License: MIT
+   Copyright: Meta Platforms, Inc.
+   Repository: https://github.com/facebook/react
+
+3. TGrid (tgrid)
+   Version: ^1.2.0
+   License: MIT
+   Copyright: Jeongho Nam
+   Repository: https://github.com/samchon/tgrid
+
+4. Vite (vite, @vitejs/plugin-react)
+   Version: ^7.1.7
+   License: MIT
+   Copyright: Evan You and Vite contributors
+   Repository: https://github.com/vitejs/vite
+
+5. Tailwind CSS (tailwindcss, @tailwindcss/vite)
+   Version: ^4.1.13
+   License: MIT
+   Copyright: Tailwind Labs, Inc.
+   Repository: https://github.com/tailwindlabs/tailwindcss
+
+6. React Markdown (react-markdown)
+   Version: ^10.1.0
+   License: MIT
+   Copyright: Titus Wormer
+   Repository: https://github.com/remarkjs/react-markdown
+
+7. Remark GFM (remark-gfm)
+   Version: ^4.0.1
+   License: MIT
+   Copyright: Titus Wormer
+   Repository: https://github.com/remarkjs/remark-gfm
+
+8. Rehype Highlight (rehype-highlight)
+   Version: ^7.0.2
+   License: MIT
+   Copyright: Titus Wormer
+   Repository: https://github.com/rehypejs/rehype-highlight
+
+9. Highlight.js (highlight.js)
+   Version: ^11.11.1
+   License: BSD-3-Clause
+   Copyright: Ivan Sagalaev and contributors
+   Repository: https://github.com/highlightjs/highlight.js
+
+10. Prism (prismjs, @types/prismjs)
+    Version: ^1.30.0
+    License: MIT
+    Copyright: Lea Verou
+    Repository: https://github.com/PrismJS/prism
+
+11. TypeScript (typescript)
+    Version: ~5.9.2
+    License: Apache-2.0
+    Copyright: Microsoft Corporation
+    Repository: https://github.com/microsoft/TypeScript
+
+================================================================================
+
+RUNTIME ENVIRONMENT
+
+Bun Runtime:
+   License: MIT
+   Copyright: Jarred Sumner and Bun contributors
+   Repository: https://github.com/oven-sh/bun
+   Note: This project uses Bun as its JavaScript runtime and package manager
+
+================================================================================
+
+ADDITIONAL NOTICES
+
+Frontend Build Tools:
+- Vite: Fast frontend build tool using native ES modules
+- PostCSS: CSS transformation tool (via Tailwind CSS)
+
+Syntax Highlighting:
+- This application uses both Highlight.js and Prism for code syntax highlighting
+- Both are open source and used under their respective licenses
+
+================================================================================
+
+For detailed license texts, please refer to each package's LICENSE file in node_modules
+or visit their respective repository URLs listed above.
+
+To view licenses of all dependencies, run:
+  bun pm ls --all
+  bunx license-checker --summary
+
+================================================================================
+
+This software and its documentation are provided "as is" without warranty of any kind.
