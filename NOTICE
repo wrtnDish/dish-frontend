@@ -98,6 +98,7 @@ Bun Runtime:
 ADDITIONAL NOTICES
 
 External APIs (used by backend):
+- OpenRouter API: Subject to OpenRouter's Terms of Use
 - 기상청(KMA) 초단기예보 API: Provides weather forecast data
 - Naver Local Search API: Provides restaurant information
 
