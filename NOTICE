@@ -97,6 +97,10 @@ Bun Runtime:
 
 ADDITIONAL NOTICES
 
+External APIs (used by backend):
+- 기상청(KMA) 초단기예보 API: Provides weather forecast data
+- Naver Local Search API: Provides restaurant information
+
 Frontend Build Tools:
 - Vite: Fast frontend build tool using native ES modules
 - PostCSS: CSS transformation tool (via Tailwind CSS)
