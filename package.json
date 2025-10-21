@@ -12,24 +12,24 @@
   "dependencies": {
     "@agentica/core": "^0.31.3",
     "@agentica/rpc": "^0.31.3",
-    "@tailwindcss/vite": "^4.1.13",
+    "@tailwindcss/vite": "^4.1.15",
     "@types/prismjs": "^1.26.5",
     "highlight.js": "^11.11.1",
     "prismjs": "^1.30.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "react-markdown": "^10.1.0",
     "rehype-highlight": "^7.0.2",
     "remark-gfm": "^4.0.1",
     "tgrid": "^1.2.0"
   },
   "devDependencies": {
-    "@types/react": "^19.1.14",
-    "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^5.0.3",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.0.4",
     "globals": "^15.15.0",
-    "tailwindcss": "^4.1.13",
-    "typescript": "~5.9.2",
-    "vite": "^7.1.7"
+    "tailwindcss": "^4.1.15",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.11"
   }
 }
