@@ -62,9 +62,9 @@ export function ChatStatus({
   if (!hasMessages) {
     const suggestedQuestions = [
       "음식 추천해줘",
-      "서울 맛집 알려줘",
+      "음식 통계 알려줘",
       "서울 강남 맛집 알려줘",
-      "서울 날씨 알려줘",
+      "현재 위치 날씨 알려줘",
     ];
 
     return (
