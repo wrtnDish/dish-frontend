@@ -35,16 +35,20 @@ export function ChatMessage({ message }: ChatMessageProps) {
   const displayContent = getDisplayContent(message.content);
 
   return (
-    <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
+    <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}>
       <div
-        className="max-w-[80%] rounded-2xl px-4 py-3 bg-zinc-800 text-gray-100"
+        className={`max-w-[85%] rounded-2xl px-5 py-3.5 shadow-md ${
+          isUser
+            ? "bg-gradient-to-br from-orange-500 to-red-500 text-white border border-orange-400/50"
+            : "bg-white/90 backdrop-blur-sm text-gray-800 border border-orange-200/50"
+        }`}
       >
         {isUser ? (
-          <p className="text-sm whitespace-pre-wrap break-all">
+          <p className="text-base leading-normal whitespace-pre-wrap break-words">
             {displayContent}
           </p>
         ) : (
-          <div className="prose prose-sm prose-invert max-w-none [&_pre]:!p-0 [&_pre]:!m-0 [&_pre]:!bg-transparent">
+          <div className="prose prose-sm max-w-none [&_pre]:!p-0 [&_pre]:!m-0 [&_pre]:!bg-transparent [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeHighlight]}
