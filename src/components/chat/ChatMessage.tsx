@@ -35,20 +35,20 @@ export function ChatMessage({ message }: ChatMessageProps) {
   const displayContent = getDisplayContent(message.content);
 
   return (
-    <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}>
+    <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-3 lg:mb-4`}>
       <div
-        className={`max-w-[85%] rounded-2xl px-5 py-3.5 shadow-md ${
+        className={`max-w-[80%] lg:max-w-[75%] rounded-2xl lg:rounded-3xl px-4 py-3 lg:px-5 lg:py-4 shadow-md ${
           isUser
             ? "bg-gradient-to-br from-orange-500 to-red-500 text-white border border-orange-400/50"
             : "bg-white/90 backdrop-blur-sm text-gray-800 border border-orange-200/50"
         }`}
       >
         {isUser ? (
-          <p className="text-base leading-normal whitespace-pre-wrap break-words">
+          <p className="text-sm lg:text-base leading-relaxed whitespace-pre-wrap break-words">
             {displayContent}
           </p>
         ) : (
-          <div className="prose prose-sm max-w-none [&_pre]:!p-0 [&_pre]:!m-0 [&_pre]:!bg-transparent [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
+          <div className="prose prose-sm lg:prose-base max-w-none [&_pre]:!p-0 [&_pre]:!m-0 [&_pre]:!bg-transparent [&>*:first-child]:mt-0 [&>*:last-child]:mb-0 [&_p]:leading-relaxed">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeHighlight]}
