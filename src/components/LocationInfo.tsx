@@ -67,11 +67,6 @@ export function LocationInfo() {
           GPS 허용
         </button>
       </div>
-      {locationError && (
-        <div className="text-xs text-red-400 mt-1">
-          {locationError.message}
-        </div>
-      )}
     </div>
   );
 }
